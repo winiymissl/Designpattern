@@ -11,4 +11,3 @@ public abstract class CompanyCrop {
 
     abstract void makeMoney();
 }
-
