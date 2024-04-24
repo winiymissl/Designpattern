@@ -8,7 +8,6 @@ package designpattern.单例模式;
 public class Person {
     private static Person instance;
 
-
     private Person() {
     }
 
@@ -30,6 +29,7 @@ public class Person {
         }
         return instance;
     }
+
     /**
      * double-lock
      * 并不是最优秀的写法
