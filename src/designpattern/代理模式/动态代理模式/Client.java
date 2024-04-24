@@ -13,6 +13,9 @@ import java.lang.reflect.Proxy;
  */
 public class Client {
 	public static void main(String[] args) {
+		/*
+		 * 简单实例
+		 * */
 		IGamePlayer player = new GamePlayer();
 
 		InvocationHandler handler = new MyInvocationHandler(player);
@@ -23,5 +26,15 @@ public class Client {
 		proxy.login("张三", "123456");
 		proxy.killBoss();
 		proxy.upgrade();
+		/*
+		 * 更加通用的架构
+		 * */
+		/*
+		 * 被代理类必须要一个接口！！！
+		 * 当然想像CGLIB可以实现不需要接口也可以实现动态代理的方式
+		 * */
+		Subject subject = new RealSubject();
+		Subject s = SubjectDynamicProxy.newProxyInstance(subject);
+		s.doSomething();
 	}
 }
