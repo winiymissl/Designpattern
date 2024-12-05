@@ -6,10 +6,8 @@ package designpattern.命令模式;
  * @Date 2024-04-26
  */
 public interface Command {
-	/**
-	 * 执行
-	 */
-	void setCommand();
-
-	void action();
+    /**
+     * 执行
+     */
+    void execute();
 }
